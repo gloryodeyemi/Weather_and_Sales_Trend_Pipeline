@@ -2,7 +2,7 @@ USE ROLE accountadmin;
 USE WAREHOUSE compute_wh;
 USE DATABASE tasty_bytes;
 
-/* user defined functions */
+/* user-defined functions */
 -- converts fareinheit to celcius
 CREATE OR REPLACE FUNCTION tasty_bytes.analytics.fahrenheit_to_celsius(temp_f NUMBER(35,4))
   RETURNS NUMBER(35,4)
