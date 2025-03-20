@@ -2,7 +2,7 @@ USE ROLE accountadmin;
 USE WAREHOUSE compute_wh;
 USE DATABASE tasty_bytes;
 
--- Apply UDFs and confirm successful execution
+-- apply UDFs and confirm successful execution
 CREATE OR REPLACE VIEW harmonized.weather_hamburg
 AS
 SELECT

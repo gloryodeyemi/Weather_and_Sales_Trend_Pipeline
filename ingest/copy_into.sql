@@ -1,16 +1,16 @@
 CREATE OR REPLACE DATABASE tasty_bytes;
 CREATE OR REPLACE SCHEMA raw_pos;
 
--- Create a CSV file format:
+-- create a CSV file format:
 CREATE OR REPLACE FILE FORMAT tasty_bytes.public.csv_ff
 type = 'csv';
 
--- Specify the file format:
+-- specify the file format:
 CREATE OR REPLACE STAGE tasty_bytes.public.s3load
 url = 's3://sfquickstarts/tasty-bytes-builder-education/'
 file_format = tasty_bytes.public.csv_ff;
 
--- country table build
+-- create country table
 CREATE OR REPLACE TABLE tasty_bytes.raw_pos.country
 (
    country_id NUMBER(18,0),
@@ -22,6 +22,6 @@ CREATE OR REPLACE TABLE tasty_bytes.raw_pos.country
    city_population VARCHAR(16777216)
 );
 
--- Use the COPY INTO command to load data from S3 bucket into the country table:
+-- use the COPY INTO command to load data from S3 bucket into the country table:
 COPY INTO tasty_bytes.raw_pos.country
 FROM @tasty_bytes.public.s3load/raw_pos/country/;

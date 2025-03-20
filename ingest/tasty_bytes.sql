@@ -45,7 +45,7 @@ raw zone table build
 --*/
 
 
--- franchise table build
+-- create franchise table 
 CREATE OR REPLACE TABLE tasty_bytes.raw_pos.franchise
 (
    franchise_id NUMBER(38,0),
@@ -58,7 +58,7 @@ CREATE OR REPLACE TABLE tasty_bytes.raw_pos.franchise
 );
 
 
--- location table build
+-- create location table
 CREATE OR REPLACE TABLE tasty_bytes.raw_pos.location
 (
    location_id NUMBER(19,0),
@@ -71,7 +71,7 @@ CREATE OR REPLACE TABLE tasty_bytes.raw_pos.location
 );
 
 
--- menu table build
+-- create menu table 
 CREATE OR REPLACE TABLE tasty_bytes.raw_pos.menu
 (
    menu_id NUMBER(19,0),
@@ -88,7 +88,7 @@ CREATE OR REPLACE TABLE tasty_bytes.raw_pos.menu
 );
 
 
--- truck table build
+-- create truck table 
 CREATE OR REPLACE TABLE tasty_bytes.raw_pos.truck
 (
    truck_id NUMBER(38,0),
@@ -108,7 +108,7 @@ CREATE OR REPLACE TABLE tasty_bytes.raw_pos.truck
 );
 
 
--- order_header table build
+-- create order_header table
 CREATE OR REPLACE TABLE tasty_bytes.raw_pos.order_header
 (
    order_id NUMBER(38,0),
@@ -130,7 +130,7 @@ CREATE OR REPLACE TABLE tasty_bytes.raw_pos.order_header
 );
 
 
--- order_detail table build
+-- create order_detail table
 CREATE OR REPLACE TABLE tasty_bytes.raw_pos.order_detail
 (
    order_detail_id NUMBER(38,0),
@@ -145,7 +145,7 @@ CREATE OR REPLACE TABLE tasty_bytes.raw_pos.order_detail
 );
 
 
--- customer loyalty table build
+-- create customer loyalty table
 CREATE OR REPLACE TABLE tasty_bytes.raw_customer.customer_loyalty
 (
    customer_id NUMBER(38,0),

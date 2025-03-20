@@ -1,4 +1,4 @@
- # Import Python packages
+ # import Python packages
 import streamlit as st
 import altair as alt
 from snowflake.snowpark.context import get_active_session
@@ -10,7 +10,7 @@ session = get_active_session()
 
 st.title('Weather and Sales Trends for Hamburg, Germany')
 
-# Load the view and create a pandas dataframe 
+# load the view and create a pandas dataframe 
 hamburg_weather = session.table("tasty_bytes.harmonized.weather_hamburg").select(
     col("DATE"),
     col("DAILY_SALES"),
@@ -21,7 +21,7 @@ hamburg_weather = session.table("tasty_bytes.harmonized.weather_hamburg").select
 
 hamburg_weather_long = hamburg_weather.melt('DATE', var_name='Measure', value_name='Value')
 
-# Map column names to desired legend titles
+# map column names to desired legend titles
 hamburg_weather_long['Measure'] = hamburg_weather_long['Measure'].replace({
     'DAILY_SALES': 'Daily Sales ($)',
     'AVG_TEMPERATURE_FAHRENHEIT': 'Avg Temperature (°F)',
@@ -29,7 +29,7 @@ hamburg_weather_long['Measure'] = hamburg_weather_long['Measure'].replace({
     'MAX_WIND_SPEED_100M_MPH': 'Max Wind Speed (mph)'
 })
 
-# Create the Altair chart
+# create the Altair chart
 chart = alt.Chart(hamburg_weather_long).mark_line(point=True).encode(
     x=alt.X('DATE:T', title='Date'),
     y=alt.Y('Value:Q', title='Values'),
@@ -50,5 +50,5 @@ chart = alt.Chart(hamburg_weather_long).mark_line(point=True).encode(
     strokeWidth=0
 )
 
-# Display the chart in the Streamlit app
+# display the chart in the Streamlit app
 st.altair_chart(chart, use_container_width=True)
