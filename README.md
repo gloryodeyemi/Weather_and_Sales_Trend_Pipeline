@@ -1,7 +1,5 @@
 # Weather and Sales Trend Pipeline
-Weather and sales trend end-to-end pipeline using Snowflake
 
-## Overview
 This project demonstrates an end-to-end data pipeline that integrates weather data with sales trends using **Snowflake** for data storage and processing. The pipeline is structured into three main phases: **Ingestion, Transformation, and Delivery**. A **Streamlit** application is provided to visualize and analyze the processed data.
 
 ## Architecture
